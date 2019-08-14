@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AYj-Bh-don">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Select your birth-->
+        <scene sceneID="bto-pB-kzH">
+            <objects>
+                <viewController id="qQc-Dy-HZg" customClass="DatePickerViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TIH-08-Xa6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4bL-FE-Ha7">
+                                <rect key="frame" x="0.0" y="216" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="582897099.04227304">
+                                    <!--2019-06-22 11:51:39 am +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePickerIsScrolled:" destination="qQc-Dy-HZg" eventType="valueChanged" id="PoH-6w-14w"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxC-IL-P8j">
+                                <rect key="frame" x="126" y="506" width="123" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="Yin-2j-ZeD"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="0.88029751710000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextClicked:" destination="qQc-Dy-HZg" eventType="touchUpInside" id="o0r-HQ-nMA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1336251762075612" green="0.24462056357332382" blue="0.82392131979695438" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="NxC-IL-P8j" firstAttribute="leading" secondItem="PaO-46-pCw" secondAttribute="leading" constant="126" id="2T8-ss-tP7"/>
+                            <constraint firstItem="PaO-46-pCw" firstAttribute="trailing" secondItem="NxC-IL-P8j" secondAttribute="trailing" constant="126" id="Luh-OO-4ao"/>
+                            <constraint firstItem="PaO-46-pCw" firstAttribute="bottom" secondItem="NxC-IL-P8j" secondAttribute="bottom" constant="233" id="dSc-0o-wBd"/>
+                            <constraint firstItem="NxC-IL-P8j" firstAttribute="centerX" secondItem="4bL-FE-Ha7" secondAttribute="centerX" id="oAq-5C-zQ9"/>
+                            <constraint firstItem="NxC-IL-P8j" firstAttribute="top" secondItem="4bL-FE-Ha7" secondAttribute="bottom" constant="74" id="phs-wx-oPH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PaO-46-pCw"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select your birth" id="6sg-yk-Bv1"/>
+                    <connections>
+                        <outlet property="datePicker" destination="4bL-FE-Ha7" id="B6r-Dl-IxC"/>
+                        <segue destination="GzT-Rj-yOm" kind="show" identifier="player" id="8ok-1C-zYq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="app-fA-hja" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1231.2" y="454.43349753694582"/>
+        </scene>
+        <!--Personality View Controller-->
+        <scene sceneID="GyN-lU-JzS">
+            <objects>
+                <viewController id="GzT-Rj-yOm" customClass="PersonalityViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DAd-qe-ptW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Jc-vx-x8O">
+                                <rect key="frame" x="0.0" y="88" width="414" height="179"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="universe" translatesAutoresizingMaskIntoConstraints="NO" id="y08-WE-1JZ">
+                                        <rect key="frame" x="0.0" y="-3" width="414" height="179"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="GYx-OZ-cLb">
+                                        <rect key="frame" x="24.999999999999986" y="33" width="237.66666666666663" height="100"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="020-scorpio" translatesAutoresizingMaskIntoConstraints="NO" id="tge-03-Lgh">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="dTE-Rj-XKF"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="f1I-dG-Jop"/>
+                                                    <constraint firstAttribute="width" constant="100" id="hcJ-ex-ua5"/>
+                                                    <constraint firstAttribute="height" constant="100" id="vLW-WP-f6A"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="bottom" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="SHn-Kq-FoV">
+                                                <rect key="frame" x="115" y="0.0" width="122.66666666666669" height="100"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scorpio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGL-Xa-B67">
+                                                        <rect key="frame" x="0.0" y="0.0" width="122.66666666666667" height="74.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 21 - Jun 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxA-z4-Bg1">
+                                                        <rect key="frame" x="0.0" y="75.333333333333343" width="122.66666666666667" height="24.666666666666671"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="vGL-Xa-B67" firstAttribute="height" secondItem="FxA-z4-Bg1" secondAttribute="height" multiplier="3" id="haM-Hw-VWY"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="SHn-Kq-FoV" secondAttribute="bottom" id="A1t-Gn-67E"/>
+                                            <constraint firstAttribute="trailing" secondItem="SHn-Kq-FoV" secondAttribute="trailing" id="GOl-QT-aoz"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="y08-WE-1JZ" secondAttribute="trailing" id="454-75-V1o"/>
+                                    <constraint firstItem="y08-WE-1JZ" firstAttribute="top" secondItem="7Jc-vx-x8O" secondAttribute="top" constant="-6" id="9xS-AQ-uhu"/>
+                                    <constraint firstAttribute="height" constant="179" id="IFI-AK-i6w"/>
+                                    <constraint firstItem="GYx-OZ-cLb" firstAttribute="top" secondItem="7Jc-vx-x8O" secondAttribute="top" constant="33" id="MPQ-gF-NZC"/>
+                                    <constraint firstAttribute="bottom" secondItem="GYx-OZ-cLb" secondAttribute="bottom" constant="46" id="RbS-3h-xha"/>
+                                    <constraint firstItem="GYx-OZ-cLb" firstAttribute="leading" secondItem="7Jc-vx-x8O" secondAttribute="leading" constant="25" id="enY-Po-wtz"/>
+                                    <constraint firstItem="y08-WE-1JZ" firstAttribute="leading" secondItem="7Jc-vx-x8O" secondAttribute="leading" id="jhv-cR-ueN"/>
+                                    <constraint firstAttribute="bottom" secondItem="y08-WE-1JZ" secondAttribute="bottom" id="tFK-ru-m4f"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVo-zU-Izo">
+                                <rect key="frame" x="0.0" y="270" width="414" height="1530"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7H-w6-Whe">
+                                        <rect key="frame" x="0.0" y="98" width="414" height="1335"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1335" id="zcd-AR-76a"/>
+                                        </constraints>
+                                        <string key="text">Intelligent, kind, and always willing to put others before themselves, Libras value harmony in all forms. Ruled by Venus, the planet of beauty, Libra adores a life that looks good. As the master of compromise and diplomacy, Libra is adept at seeing all points of view, and excels at crafting compromises and effecting mediation between others. This sign has a rich inner life yet loves other people, and they're always happiest with a large group of friends, family, and coworkers on whom they can count.
+            
+            An air sign, Libra can often be "up in the clouds," and while he or she is amazing at making big plans, follow through can be tricky. Working with detail-oriented signs, like Virgos or Capricorns, can help Libras actually manifest their dreams into reality, especially in the workspace. But don't call out Librans for daydreaming—their imagination is one of their biggest assets, and they often put their imagination to work by finding careers in the arts or in literature.
+            
+            Libras believe that they're directing their own lives, and they take a big-picture approach in making that life look and feel the best it can be. They spend a lot of time figuring out what's missing from that big picture, and they may feel unhappy if they become too focused on one thing, whether it's work, a partner, or a family member. Librans are at their best when they balance their schedule to include plenty of time for self-care rituals and personal pursuits, and when they give themselves enough flexibility to change focus.
+            
+            When Libra falls in love, he or she falls hard, but this sign also recognizes that there's room for more than one grand love in his or her life. The Scales are pragmatic about love, realizing that different relationships often have different seasons. Librans can sometimes be accused of being too pragmatic, and they've been known to call off a relationship pre-emptively if they feel it may not work due to distance, age difference, or another external conflict.
+            
+            Although Libra appears self-confident to outsiders, he or she might struggle with insecurity, especially as it relates to personal identity, which sometimes feels mutable. This sign's lifelong question is: "Who am I?" They may find their identity shifting based on where they are in their lives and who they're spending time with. In order to feel more confident in their identity, social Libras need to get comfortable spending time with themselves and getting to know their gut and their internal voice.
+            
+            Libra is fiercely attracted to intelligence, which is just as important as appearance when it comes to the partners they end up falling for. This sign is all about cerebral connections—role-playing, dirty talk, and games in the bedroom all serve to amp up their interest. Physical connection is nice, but a sexy Snap can truly crank up a Libra's libido.</string>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAT-D3-23f">
+                                        <rect key="frame" x="8" y="21" width="167.66666666666666" height="57"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="33"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="HAT-D3-23f" firstAttribute="top" secondItem="wVo-zU-Izo" secondAttribute="top" constant="21" id="C5B-fP-nBb"/>
+                                    <constraint firstItem="P7H-w6-Whe" firstAttribute="top" secondItem="HAT-D3-23f" secondAttribute="bottom" constant="20" id="C5I-af-ENj"/>
+                                    <constraint firstItem="HAT-D3-23f" firstAttribute="leading" secondItem="wVo-zU-Izo" secondAttribute="leadingMargin" id="QZj-go-olX"/>
+                                    <constraint firstItem="P7H-w6-Whe" firstAttribute="leading" secondItem="wVo-zU-Izo" secondAttribute="leading" id="SGq-DG-lSj"/>
+                                    <constraint firstAttribute="bottom" secondItem="P7H-w6-Whe" secondAttribute="bottom" constant="69" id="Tb6-O3-Y8V"/>
+                                    <constraint firstItem="P7H-w6-Whe" firstAttribute="top" secondItem="wVo-zU-Izo" secondAttribute="top" constant="98" id="WKX-nc-5Xb"/>
+                                    <constraint firstItem="P7H-w6-Whe" firstAttribute="width" secondItem="wVo-zU-Izo" secondAttribute="width" id="aA3-QX-jwm"/>
+                                    <constraint firstAttribute="trailing" secondItem="P7H-w6-Whe" secondAttribute="trailing" id="qDK-pz-anJ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="wVo-zU-Izo" secondAttribute="bottom" id="4yh-Pa-tyJ"/>
+                            <constraint firstItem="wVo-zU-Izo" firstAttribute="trailing" secondItem="mzI-Y4-OLY" secondAttribute="trailing" id="806-Tc-hfM"/>
+                            <constraint firstItem="wVo-zU-Izo" firstAttribute="leading" secondItem="mzI-Y4-OLY" secondAttribute="leading" id="9uY-Xt-TRI"/>
+                            <constraint firstItem="7Jc-vx-x8O" firstAttribute="top" secondItem="mzI-Y4-OLY" secondAttribute="top" id="Lh8-Vl-qt5"/>
+                            <constraint firstItem="7Jc-vx-x8O" firstAttribute="leading" secondItem="wVo-zU-Izo" secondAttribute="leading" id="T4V-hy-aqb"/>
+                            <constraint firstAttribute="bottom" secondItem="wVo-zU-Izo" secondAttribute="bottom" id="WVU-Ml-hwk"/>
+                            <constraint firstItem="wVo-zU-Izo" firstAttribute="top" secondItem="7Jc-vx-x8O" secondAttribute="bottom" constant="3" id="iKj-UJ-OO0"/>
+                            <constraint firstItem="7Jc-vx-x8O" firstAttribute="trailing" secondItem="wVo-zU-Izo" secondAttribute="trailing" id="j71-pP-0jE"/>
+                            <constraint firstItem="wVo-zU-Izo" firstAttribute="leading" secondItem="mzI-Y4-OLY" secondAttribute="leading" id="qaz-MP-16O"/>
+                            <constraint firstItem="wVo-zU-Izo" firstAttribute="trailing" secondItem="mzI-Y4-OLY" secondAttribute="trailing" id="vtM-Iz-M2D"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mzI-Y4-OLY"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="1800"/>
+                    <connections>
+                        <outlet property="personalityTextView" destination="P7H-w6-Whe" id="zKZ-Th-LHQ"/>
+                        <outlet property="scrollView" destination="wVo-zU-Izo" id="hbb-11-wWO"/>
+                        <outlet property="zodiacDateRange" destination="FxA-z4-Bg1" id="QBT-9e-9fT"/>
+                        <outlet property="zodiacImage" destination="tge-03-Lgh" id="gDC-8P-zor"/>
+                        <outlet property="zodiacLabel" destination="vGL-Xa-B67" id="91S-2W-qWN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cfO-aO-YjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2259" y="819"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="q7g-4T-9iu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AYj-Bh-don" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GXW-6i-riY">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qQc-Dy-HZg" kind="relationship" relationship="rootViewController" id="1UR-0y-Hsh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kxy-K2-eQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288.80000000000001" y="454.43349753694582"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="020-scorpio" width="512" height="512"/>
+        <image name="universe" width="2053" height="1500"/>
+    </resources>
+</document>
