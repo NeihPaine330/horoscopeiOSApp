@@ -1,1 +1,1 @@
-# horoscopeiOSApp
+# Horoscope
