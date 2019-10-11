@@ -1,2 +1,2 @@
-# Horoscope-iOS
+# Horoscope
 
